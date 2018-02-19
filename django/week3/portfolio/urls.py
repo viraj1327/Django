@@ -1,4 +1,4 @@
-"""class1 URL Configuration
+"""portfolio URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
@@ -14,12 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-
+from django.urls import path
 from . import views
 
 urlpatterns = [
-    path(r'', views.home, name='home'),
-    path(r'Resume/', include('Resume.urls', namespace='Resume')),
-    path(r'admin/', admin.site.urls),
+    path('', views.base, name='base'),
+    path('contact/', views.contact, name='contact'),
+    path('portfolio/', views.portfolio, name='portfolio'),
+    path('resume', views.resume, name='resume'),
+    path('home', views.home, name='home'),
+    path('admin/', admin.site.urls),
 ]
